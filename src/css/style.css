@@ -1,0 +1,75 @@
+:root {
+  --color-mode: "light";
+  --color-dark: black;
+  --color-light: white;
+  --background: white;
+  --text-color: black;
+}
+
+.searching-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-box-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.spinner-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.cat-card {
+  display: flex;
+  flex-direction: column;
+
+  /* TODO: 카드 정렬하기 */
+  margin-left: calc((100% - (20% * 4)) / 4);
+
+  width: 250px;
+  height: 350px;
+}
+
+.recent-keywords {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card-image {
+  height: 70%;
+}
+
+.keyword {
+  background-color: rgb(255, 127, 0);
+  color: white;
+  border-radius: 11px;
+
+  padding: 5px;
+  margin-right: 8px;
+}
+
+.random-btn {
+  cursor: pointer;
+  font-size: 35px;
+}
