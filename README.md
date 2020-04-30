@@ -6,7 +6,7 @@
 
 - 비동기 처리에 대한 이해 부족  
    lazyload.js에서 IntersectionObserver사용하여 유저가 보이는 부분만 로딩해서 리소스를 절약하는 방법으로 이해했으나 내부적으로 어떻게 동작하는지 잘 모르겠음  
-  ![20200430(./readMeImg/20200430.png)
+  ![20200430(readMeImg/20200430.png)
 
 ### ref
 
