@@ -1,5 +1,6 @@
 import ResultsSection from "./components/ResultsSection.js";
 import SearchingSection from "./components/SearchingSection.js";
+import DetailModal from "./components/DetailModal.js";
 import { getItem, setItem } from "./util/sessionStorage.js";
 import { api } from "./api/theCatApi.js";
 import Loading from "./components/Loading.js";
@@ -41,6 +42,9 @@ export default class App {
     const resultsSection = new ResultsSection({
       $target,
       data,
+      onClick: data => {
+        detailModal.setState(data);
+      },
       onScroll: async () => {
         loading.toggleSpinner();
         const response = await api.fetchRandomCats();
@@ -56,5 +60,6 @@ export default class App {
         }
       }
     });
+    const detailModal = new DetailModal({ $target });
   }
 }

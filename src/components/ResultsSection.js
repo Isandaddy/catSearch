@@ -14,11 +14,16 @@ export default class ResultsSection {
   }
 
   setState(data) {
-    console.log(data);
     this.data = data;
     this.render();
     lazyLoad();
   }
+
+  findCatById(id) {
+    const result = this.data.find(cat => cat.id === id);
+    return result;
+  }
+
   render() {
     if (!this.data) return;
     this.section.innerHTML = "";
@@ -32,6 +37,21 @@ export default class ResultsSection {
           data: cat
         });
       });
+
+      //modal의 클릭이벤트
+      cardContainer.addEventListener("click", e => {
+        console.log(e);
+        const path = e.path;
+        const card = path.find(comp => comp.className === "cat-card");
+
+        if (card) {
+          const id = card.dataset.id;
+          const cardInfo = this.findCatById(id);
+
+          this.onClick(cardInfo);
+        }
+      });
+
       this.section.appendChild(cardContainer);
     } else {
       const noticeSection = document.createElement("section");
